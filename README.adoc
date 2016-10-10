@@ -4,3 +4,4 @@
 
 A latex project for creating power cards for D&D 5 abilities.
 
+Credit to link:http://tex.stackexchange.com/users/55952/arvid[Arvid] for link:http://tex.stackexchange.com/a/185830/113470[the original template].
