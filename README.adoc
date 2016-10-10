@@ -1,0 +1,6 @@
+= D&D 5 Power Cards
+:author: Peter Cummuskey
+:email: peterc@aetheric.co.nz
+
+A latex project for creating power cards for D&D 5 abilities.
+
