@@ -4,8 +4,20 @@ services:
   - docker
 
 before_install:
+  - apt-get install zip
   - docker pull narf/latex
 
 script:
-  - docker run -i narf/latex < ~/mystic.tex > mystic.pdf
+  - docker run -i narf/latex < ./mystic.tex > mystic.pdf
 
+before_deploy:
+  - zip dnd5-power-cards *.pdf
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: fDV0l6VkAjv+aduEcN6R447b0cvK9kqHpTyxRaPpk1HuUSPcwAxGKqYObF7TGyoHpIXIz4xHZm6YwS0TJi+IOd62vgw0qI6ACyD1h7wFnYfMbJANm1kC/4GoVECDgFpfYih73j91Ncr80KS5Q/Ks65KdWHcMEUZLxzvcwnNhMJSL3rPQDm2L3WtYGMOPoqKn+62QD4KcegHpsaXvQDanwWbOAttGvtUsaqc0vx2EKujkzTKzDLle4/Ndkw2kCDx1mlW3/rOJmABXQ8Dg4bvIllvfebyE3Lj1NydQ7lJtxzIkSk7Z2IiG4ve63f8e5VhQWaDHuvVzH15C6M/MWM/hHFjY0rC26jY1QhhSBCWGeHDnfTwYdiqaSgEzzjXIPDTtn3i10wSG2IVM+gHRj9YBgHii1ae8YXP/cN1l/hsq5MBOMfw8ZFlpUx+XY8sA1p7kC35NENhD/SWknFLznZSEPgSPQLT51uGZmRbocj9u/hqDPdqtV6bIejXV4ODzYsh8k+C90t0Rl9mbFypPdXYhiH0mr/hemrOKYP5Qevpqe3G4WHWUagkegRi93+7CO7Sa2+6gl1g+jfZAlSxnQosrdeP2lm85dMuOTVPqfcrElNbtJm8P3p6N8dcomVCa/rGGYbnK4JeUHxlhuCuQ9lQ+FmcNu2WjQocbLyZDS4xvOmA=
+  file: dnd5-power-cards.zip
+  on:
+    tags: true
