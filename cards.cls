@@ -135,10 +135,10 @@
 
 	\node at (\strippadding+\stripwidth-0.28,\cardheight-\strippadding-\strippadding-0.37) {\color{white}#3};
 }
-\newcommand{\cardtypeCharacter}{\cardtype{characterbg}{Character}{\hspace{-1mm}\LARGE\lefthand}}
-\newcommand{\cardtypeAbility}{\cardtype{abilitybg}{Ability}{\hspace{-1mm}\Large\floweroneright}}
-\newcommand{\cardtypeItem}{\cardtype{itembg}{Item}{\hspace{-1mm}\LARGE\bomb}}
-\newcommand{\cardtypeTest}{\cardtype{testbg}{Test}{\hspace{-1.4mm}\huge\ding{78}}}
+\newcommand{\cardtypePerLongRest}{\cardtype{characterbg}{Once Per Long Rest}{\hspace{-1mm}\LARGE\lefthand}}
+\newcommand{\cardtypePerTurn}{\cardtype{abilitybg}{Once Per Turn}{\hspace{-1mm}\Large\floweroneright}}
+\newcommand{\cardtypePerRest}{\cardtype{itembg}{Once Per Rest}{\hspace{-1mm}\LARGE\bomb}}
+\newcommand{\cardtypeAtWill}{\cardtype{testbg}{At-will}{\hspace{-1.4mm}\huge\ding{78}}}
 
 % Title Card
 \newcommand{\cardtitle}[1]{
@@ -157,10 +157,8 @@
 		\clip[cardcorners] \shapeCard;
 		\fill[elementcorners,contentbg] \shapeContentArea;
 	\end{scope}
-	\node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,0.5*\cardheight-\textpadding) {
-		\textit{\glqq\normalsize #1\grqq}
-	};
-	\node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,3) {
+	\node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,7) {
+		{\scriptsize #1}		
 		\vrule width \textwidth height 2pt \\[-2pt]
 		\vspace{0.2cm}
 		{\scriptsize #2}
