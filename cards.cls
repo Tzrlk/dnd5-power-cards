@@ -7,7 +7,7 @@
 \LoadClass[a4paper,landscape]{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage[margin=6mm,top=5mm]{geometry}
+\usepackage[margin=5mm,top=8mm]{geometry}
 \usepackage{graphicx}
 \usepackage[english]{babel}
 
@@ -173,3 +173,6 @@
 	\end{scope}
 	\node at (\cardwidth-0.5*\stripwidth-\strippadding,\titley-0.1) {#1};
 }
+
+\newcommand{\hpad}{\hspace{10mm}}
+\newcommand{\vpad}{\vspace{10mm}}
