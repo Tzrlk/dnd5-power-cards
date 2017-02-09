@@ -4,10 +4,11 @@ dist: trusty
 before_install:
   - "sudo apt-get install -y --no-install-recommends
       zip
+      dvipng
+      latex-xcolor
       texlive-fonts-recommended
       texlive-latex-extra
       texlive-fonts-extra
-      dvipng
       texlive-latex-recommended"
 
 script:
