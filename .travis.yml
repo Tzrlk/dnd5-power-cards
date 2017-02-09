@@ -1,14 +1,27 @@
 sudo: required
-
-services:
-  - docker
+dist: trusty
 
 before_install:
-  - sudo apt-get install -y zip
-  - docker pull narf/latex
+  - "sudo apt-get install -y --no-install-recommends
+      zip
+      texlive-fonts-recommended
+      texlive-latex-extra
+      texlive-fonts-extra
+      dvipng
+      texlive-latex-recommended"
 
 script:
-  - docker run -i narf/latex < ./mystic.tex > mystic.pdf
+  - mkdir _build
+  - "pdflatex 
+      -interaction=nonstopmode
+      -halt-on-error
+      -output-directory _build
+      mystic.tex"
+  - "pdflatex 
+      -interaction=nonstopmode
+      -halt-on-error
+      -output-directory _build
+      mystic.tex"
 
 before_deploy:
   - zip dnd5-power-cards *.pdf
